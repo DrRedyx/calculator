@@ -24,5 +24,10 @@ public class CalculatorController {
         int division = calculatorService.division(num1, num2);
         return num1 + "/" + num2 + "=" + division;
     }
+    @GetMapping(path = "/sum")
+    public String sum(@RequestParam("number1") int num1, @RequestParam("number2") int num2) {
+        int decrease = calculatorService.sum(num1, num2);
+        return num1 + "+" + num2 + "=" + decrease;
+    }
 
 }
