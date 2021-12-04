@@ -14,12 +14,15 @@ public class CalculatorController {
     }
 
     @GetMapping(path = "/decrease")
-    public String decrease(@RequestParam("number1") String num1, @RequestParam("number2") String num2) {
-        return calculatorService.decrease(num1, num2);
+    public String decrease(@RequestParam("number1") int num1, @RequestParam("number2") int num2) {
+        int decrease = calculatorService.decrease(num1, num2);
+        return num1 + "-" + num2 + "=" + decrease;
+
     }
     @GetMapping(path = "/division")
-    public String division(@RequestParam("number1") String num1, @RequestParam("number2") String num2) {
-        return calculatorService.division(num1, num2);
+    public String division(@RequestParam("number1") int num1, @RequestParam("number2") int num2) {
+        int division = calculatorService.division(num1, num2);
+        return num1 + "/" + num2 + "=" + division;
     }
 
 }
